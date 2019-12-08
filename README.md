@@ -9,7 +9,8 @@ First [`npm i -g angular-cli-ghpages`](https://github.com/angular-schule/angular
 
     ng build --prod
     cp README.md dist/sydney-scientific-foundation-www
-    ngh --cname='scientific.sydney' --dir='dist/sydney-scientific-foundation-www' --repo='https://github.com/offscale/offscale.github.io' --branch='master' --message="$(git log -1 --pretty='%B')"
+    # --cname='scientific.sydney'
+    ngh --dir='dist/sydney-scientific-foundation-www' --repo='https://github.com/sydney-scientific-foundation/sydney-scientific-foundation.github.io' --branch='master' --message="$(git log -1 --pretty='%B')"
 
 ## Install
 
