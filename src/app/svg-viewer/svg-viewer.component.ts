@@ -1,8 +1,10 @@
 import { Component, ElementRef, Input, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 
+
 const getAbsolutePathFromSrc = (src: string): string =>
   src.slice(src.indexOf('assets/') - 1);
+
 
 @Component({
   selector: 'app-svg-viewer',
