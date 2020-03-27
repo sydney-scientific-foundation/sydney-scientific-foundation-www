@@ -1,10 +1,10 @@
 scientific.sydney
 =================
 [![License](https://img.shields.io/badge/license-Apache--2.0%20OR%20MIT-blue.svg)](https://opensource.org/licenses/Apache-2.0)
-![David dependency status for latest release](https://david-dm.org/sydney-scientific-foundation-www/www.svg)
-[![Build Status](https://travis-ci.org/sydney-scientific-foundation-www/www.svg?branch=master)](https://travis-ci.org/sydney-scientific-foundation-www/www)
+![David dependency status for latest release](https://david-dm.org/sydney-scientific-foundation/sydney-scientific-foundation-www.svg)
+![GitHub Pages](https://github.com/sydney-scientific-foundation/sydney-scientific-foundation-www/workflows/GitHub%20Pages/badge.svg)
 
-Sydney Scientific website.
+Sydney Scientific Foundation website.
 
 ## Deploy distribution
 First [`npm i -g angular-cli-ghpages`](https://github.com/angular-schule/angular-cli-ghpages), then:
