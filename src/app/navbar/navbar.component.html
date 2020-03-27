@@ -1,0 +1,18 @@
+<section fxLayout="column" class="hero">
+  <nav fxFlex fxLayout="row" ngStyle.gt-sm="padding-top: 20px" ngStyle.lt-md="padding-top: 0">
+    <a fxFlex.gt-md="50" routerLink="/">
+      <img src="/assets/logo-offscale.svg"
+           alt="Offscale"
+           height="100px"
+           style="width: 100%"/>
+    </a>
+    <h1 fxFlex fxLayoutAlign="end" ngStyle.lt-md="font-size: small">
+      <a href="https://github.com/offscale">
+        <img src="/assets/github-white.svg"
+             alt="GitHub repos for Compiler Driven Development"
+             height="50px" ngStyle.lt-md="height: 30px; padding: 0 10px"/>
+      </a>
+    </h1>
+  </nav>
+  <ng-content fxFlex></ng-content>
+</section>

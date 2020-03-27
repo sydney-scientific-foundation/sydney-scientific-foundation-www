@@ -10,69 +10,17 @@ footer {
   line-height: 100px;
 }
 
-.hero {
-  //background: #460665 url("/assets/bg.jpg");
-  background-color: #ff6a00;
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
-  color: white;
-  font-weight: bold;
-}
-
 .case_study {
   background-color: #220066;
   color: white;
-}
-
-.fixed-width-lg {
-  max-width: 800px;
-}
-
-.fixed-width-md {
-  max-width: 600px;
-}
-
-.flex {
-  display: flex;
-}
-
-.flex-container {
-  min-width: 1px;
-  max-width: 1024px;
-  flex: 1 1 auto;
-  margin: 0 auto;
-}
-
-.flex-rows {
-  display: flex;
-  flex-direction: row;
-  width: 100%;
-}
-
-.flex-cols {
-  display: flex;
-  flex-direction: column;
-}
-
-.flex-center {
-  justify-content: center;
-  align-items: center;
-}
-
-.flex-space-between {
-  justify-content: space-between;
-}
-
-.center {
-  text-align: center;
 }
 
 .text-size-xl {
   font-weight: bold;
   font-size: 48px;
 }
-@media (max-width: 400px) {
+
+@media screen and (max-width: 599px) {
   .text-size-xl {
     font-weight: bold;
     font-size: 38px;
@@ -102,7 +50,8 @@ footer {
   line-height: 70px;
   max-width: 350px;
   font-size: 20px;
-  font-weight: bold;
+  font-weight: 700;
+  padding: 15px;
 }
 
 .btn:link,
@@ -144,19 +93,6 @@ footer {
   margin-right: 10px;
 }
 
-.m-h-sm {
-  margin-left: 20px;
-  margin-right: 20px;
-}
-
-nav a:link {
-  color: white;
-  text-decoration: none;
-  font-weight: normal;
-  line-height: 80px;
-  font-size: 20px;
-}
-
 p {
   margin-top: 0;
 }
@@ -165,21 +101,8 @@ h2 {
   margin-bottom: 10px;
 }
 
-/* desktop only */
-@media (min-width: 1000px) {
-  .desktop-flex-rows {
-    display: flex;
-    flex-direction: row;
-    width: 100%;
-  }
-
-  .desktop-flex-cols {
-    display: flex;
-    flex-direction: column;
-  }
-}
-@media (max-width: 1000px) {
-  .mobile-hide {
-    display: none;
-  }
+hr.vertical {
+  height:100%; /* you might need some positioning for this to work, see other questions about 100% height */
+  width:0;
+  border:1px solid black;
 }
