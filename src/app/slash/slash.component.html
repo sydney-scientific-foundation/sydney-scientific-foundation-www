@@ -1,7 +1,16 @@
 <app-navbar>
-  <div class="text-size-xl text-center m-v-lg" style="padding-bottom: 200px;">
-    Diagnose the world.<br/>Without government.
-  </div>
+  <ng-container [ngSwitch]="siteModeService.siteMode$ | async">
+    <div class="text-size-xl text-center m-v-lg"
+         style="padding-bottom: 200px;"
+         *ngSwitchCase="'engineer'">
+      Charitable software.<br/>Screen billions.
+    </div>
+    <div class="text-size-xl text-center m-v-lg"
+         style="padding-bottom: 200px;"
+         *ngSwitchCase="'business'">
+      Diagnose the world.<br/>Without government.
+    </div>
+  </ng-container>
 
   <!--
   <div class="text-center" fxLayout="row" fxLayoutAlign="center center" fxLayoutGap="20px"
@@ -12,7 +21,7 @@
   -->
 </app-navbar>
 
-<div fxLayout="column" ngStyle.gt-xs="margin: 0 15% 0 15%;" ngStyle.lt-sm="margin: 0">
+<div fxLayout="column" ngStyle.gt-xs="margin: 0 15% 0 15%;" ngStyle.lt-md="margin: 0">
   <section class="hero-image" style="margin-top: -200px" [innerHtml]="safeHtml" *ngIf="safeHtml" fxFlex>
   </section>
 
@@ -20,7 +29,8 @@
     Dedicated to open-source R&D of medical devices and software, with a view towards worldwide diagnostic screening.
   </section>
 
-  <section class="about text-center m-v-lg" fxFlex fxLayout="row" fxLayout.lt-md="column">
+  <section class="about text-center m-v-lg" fxFlex fxLayout="row" fxLayout.lt-sm="column" fxLayoutGap="20px"
+           fxLayoutAlign="space-between">
     <div fxFlex>
       <img src="/assets/dial-36x.svg"/>
       <h2>Medical devices</h2>
@@ -43,7 +53,8 @@
     </div>
   </section>
 
-  <section class="about text-center m-v-lg" fxFlex fxLayout="row" fxLayout.lt-md="column">
+  <section class="about text-center m-v-lg" fxFlex fxLayout="row" fxLayout.lt-sm="column" fxLayoutGap="20px"
+           fxLayoutAlign="space-between">
     <div fxFlex>
       <img src="/assets/dial-multicloud.svg"/>
       <h2>Scholarship</h2>

@@ -1,5 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import { DomSanitizer } from '@angular/platform-browser';
+import { DomSanitizer, SafeHtml } from '@angular/platform-browser';
+
+import { SiteModeService } from '../site-mode.service';
+
 
 @Component({
   selector: 'app-slash',
@@ -7,13 +10,14 @@ import { DomSanitizer } from '@angular/platform-browser';
   styleUrls: ['./slash.component.scss']
 })
 export class SlashComponent implements OnInit {
-  safeHtml;
+  safeHtml: SafeHtml;
   videoNumber: string;
 
   ngOnInit() {
   }
 
-  constructor(private sanitizer: DomSanitizer) {
+  constructor(private sanitizer: DomSanitizer,
+              public siteModeService: SiteModeService) {
     this.videoNumber = '287747';
     this.safeHtml = sanitizer.bypassSecurityTrustHtml('<iframe style="width: 100%; height: 500px" allowfullscreen="true" webkitallowfullscreen="true" mozallowfullscreen="true" src="https://asciinema.org/a/' + this.videoNumber + '/iframe"></iframe>');
   }

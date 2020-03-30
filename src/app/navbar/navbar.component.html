@@ -14,5 +14,32 @@
       </a>
     </h1>
   </nav>
+  <div class="fab-container" [ngSwitch]="siteModeService.siteMode$ | async"
+       fxLayout="row" fxLayoutGap="5px">
+    <ng-container *ngSwitchCase="'business'">
+      <div class="fakeTooltip" (click)="siteModeService.siteModeSubject$.next('engineer')"
+           fxFlex fxHide.lt-sm>
+        Translate for business
+      </div>
+      <button mat-mini-fab aria-label="Business translation"
+              fxFlex.gt-xs="16"
+              (click)="siteModeService.siteModeSubject$.next('engineer')">
+        <mat-icon>business_center</mat-icon>
+      </button>
+    </ng-container>
+    <!-- *ngSwitchCase="'engineer'" -->
+    <ng-container *ngSwitchCase="'engineer'">
+      <div class="fakeTooltip" (click)="siteModeService.siteModeSubject$.next('business')"
+           fxFlex fxHide.lt-sm>
+        Translate for engineers
+      </div>
+      <button mat-mini-fab aria-label="Software-engineer translation"
+              fxFlex.gt-xs="16"
+              (click)="siteModeService.siteModeSubject$.next('business')">
+
+        <mat-icon>build</mat-icon>
+      </button>
+    </ng-container>
+  </div>
   <ng-content fxFlex></ng-content>
 </section>
