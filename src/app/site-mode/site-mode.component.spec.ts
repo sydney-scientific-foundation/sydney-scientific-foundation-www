@@ -1,20 +1,20 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { SvgViewerComponent } from './svg-viewer.component';
+import { SiteModeComponent } from './site-mode.component';
 
-describe('SvgViewerComponent', () => {
-  let component: SvgViewerComponent;
-  let fixture: ComponentFixture<SvgViewerComponent>;
+describe('SiteModeComponent', () => {
+  let component: SiteModeComponent;
+  let fixture: ComponentFixture<SiteModeComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [SvgViewerComponent]
+      declarations: [SiteModeComponent]
     })
       .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(SvgViewerComponent);
+    fixture = TestBed.createComponent(SiteModeComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

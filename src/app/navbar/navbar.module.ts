@@ -1,13 +1,15 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { RouterModule } from '@angular/router';
 
 import { FlexLayoutModule } from '@angular/flex-layout';
 
 import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
-
-import { NavbarComponent } from './navbar.component';
 import { MatTooltipModule } from '@angular/material/tooltip';
+
+import { SiteModeModule } from '../site-mode/site-mode.module';
+import { NavbarComponent } from './navbar.component';
 
 
 @NgModule({
@@ -20,7 +22,9 @@ import { MatTooltipModule } from '@angular/material/tooltip';
     FlexLayoutModule,
     MatButtonModule,
     MatIconModule,
-    MatTooltipModule
+    MatTooltipModule,
+    SiteModeModule,
+    RouterModule
   ],
   // providers: [SiteModeService]
 })

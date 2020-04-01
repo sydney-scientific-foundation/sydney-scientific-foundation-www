@@ -1,7 +1,6 @@
-import { AfterViewInit, Injectable, ViewChild } from '@angular/core';
+import { Injectable } from '@angular/core';
 
 import { BehaviorSubject, Observable } from 'rxjs';
-import { MatTooltip } from '@angular/material/tooltip';
 
 
 @Injectable({

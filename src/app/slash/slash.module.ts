@@ -16,4 +16,4 @@ import { NavbarModule } from '../navbar/navbar.module';
     FlexLayoutModule, SvgViewerModule, NavbarModule
   ]
 })
-export class SlashModule { }
+export class SlashModule {}

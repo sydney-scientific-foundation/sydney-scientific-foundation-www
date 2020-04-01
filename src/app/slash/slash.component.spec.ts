@@ -8,9 +8,9 @@ describe('SlashComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ SlashComponent ]
+      declarations: [SlashComponent]
     })
-    .compileComponents();
+      .compileComponents();
   }));
 
   beforeEach(() => {

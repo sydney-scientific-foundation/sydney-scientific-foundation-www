@@ -1,45 +1,19 @@
-<section fxLayout="column" class="hero">
+<section class="hero" fxLayout="column">
   <nav fxFlex fxLayout="row" ngStyle.gt-sm="padding-top: 20px" ngStyle.lt-md="padding-top: 0">
     <a fxFlex.gt-md="50" routerLink="/">
-      <img src="/assets/logo-offscale.svg"
-           alt="Offscale"
+      <img alt="Offscale"
            height="100px"
+           src="/assets/logo-offscale.svg"
            style="width: 100%"/>
     </a>
     <h1 fxFlex fxLayoutAlign="end" ngStyle.lt-md="font-size: small">
       <a href="https://github.com/offscale">
-        <img src="/assets/github-white.svg"
-             alt="GitHub repos for Compiler Driven Development"
-             height="50px" ngStyle.lt-md="height: 30px; padding: 0 10px"/>
+        <img alt="GitHub repos for Compiler Driven Development"
+             height="50px"
+             ngStyle.lt-md="height: 30px; padding: 0 10px" src="/assets/github-white.svg"/>
       </a>
     </h1>
   </nav>
-  <div class="fab-container" [ngSwitch]="siteModeService.siteMode$ | async"
-       fxLayout="row" fxLayoutGap="5px">
-    <ng-container *ngSwitchCase="'business'">
-      <div class="fakeTooltip" (click)="siteModeService.siteModeSubject$.next('engineer')"
-           fxFlex fxHide.lt-sm>
-        Translate for business
-      </div>
-      <button mat-mini-fab aria-label="Business translation"
-              fxFlex.gt-xs="16"
-              (click)="siteModeService.siteModeSubject$.next('engineer')">
-        <mat-icon>business_center</mat-icon>
-      </button>
-    </ng-container>
-    <!-- *ngSwitchCase="'engineer'" -->
-    <ng-container *ngSwitchCase="'engineer'">
-      <div class="fakeTooltip" (click)="siteModeService.siteModeSubject$.next('business')"
-           fxFlex fxHide.lt-sm>
-        Translate for engineers
-      </div>
-      <button mat-mini-fab aria-label="Software-engineer translation"
-              fxFlex.gt-xs="16"
-              (click)="siteModeService.siteModeSubject$.next('business')">
-
-        <mat-icon>build</mat-icon>
-      </button>
-    </ng-container>
-  </div>
+  <app-site-mode></app-site-mode>
   <ng-content fxFlex></ng-content>
 </section>

@@ -1,17 +1,13 @@
 <app-navbar>
-  <ng-container [ngSwitch]="siteModeService.siteMode$ | async">
-    <div class="text-size-xl text-center m-v-lg"
-         style="padding-bottom: 200px;"
-         *ngSwitchCase="'engineer'">
-      Charitable software.<br/>Screen billions.
-    </div>
-    <div class="text-size-xl text-center m-v-lg"
-         style="padding-bottom: 200px;"
-         *ngSwitchCase="'business'">
-      Diagnose the world.<br/>Without government.
-    </div>
-  </ng-container>
-
+  <div [ngSwitch]="siteModeService.siteMode$ | async"
+       class="text-size-xl text-center m-v-lg" style="padding-bottom: 0;">
+    <ng-container *ngSwitchCase="'business'">
+      Independent charity.<br/>Scalable medical diagnostics.
+    </ng-container>
+    <ng-container *ngSwitchCase="'engineer'">
+      Compilers, distributed systems, Rust and C++.<br/>Scale medical projects and infrastructure.
+    </ng-container>
+  </div>
   <!--
   <div class="text-center" fxLayout="row" fxLayoutAlign="center center" fxLayoutGap="20px"
        style="padding-bottom: 200px;">
@@ -22,19 +18,30 @@
 </app-navbar>
 
 <div fxLayout="column" ngStyle.gt-xs="margin: 0 15% 0 15%;" ngStyle.lt-md="margin: 0">
-  <section class="hero-image" style="margin-top: -200px" [innerHtml]="safeHtml" *ngIf="safeHtml" fxFlex>
+  <!--<section class="hero-image" style="margin-top: -200px" [innerHtml]="safeHtml" *ngIf="safeHtml" fxFlex>
+  </section>-->
+
+  <section [ngSwitch]="siteModeService.siteMode$ | async" class="m-v-lg text-size-lg" fxFlex>
+    <ng-container *ngSwitchCase="'business'">
+      Open-source R&D of medical devices and software, with a view towards worldwide diagnostic screening.
+    </ng-container>
+    <ng-container *ngSwitchCase="'engineer'">
+      Open-source cross-platform cloud-agnostic technology created for worldwide diagnostic screening.
+    </ng-container>
   </section>
 
-  <section class="m-v-lg text-size-lg" fxFlex>
-    Dedicated to open-source R&D of medical devices and software, with a view towards worldwide diagnostic screening.
-  </section>
-
-  <section class="about text-center m-v-lg" fxFlex fxLayout="row" fxLayout.lt-sm="column" fxLayoutGap="20px"
-           fxLayoutAlign="space-between">
+  <section class="about text-center m-v-lg" fxFlex fxLayout="row" fxLayout.lt-sm="column" fxLayoutAlign="space-between"
+           fxLayoutGap="20px">
     <div fxFlex>
       <img src="/assets/dial-36x.svg"/>
       <h2>Medical devices</h2>
-      <div>Smartphone ophthalmoscopes developed alongside ophthalmologists (surgeons) in Sydney, Australia.
+      <div [ngSwitch]="siteModeService.siteMode$ | async">
+        <ng-container *ngSwitchCase="'business'">
+          Smartphone ophthalmoscopes developed alongside ophthalmologists (surgeons) in Sydney, Australia.
+        </ng-container>
+        <ng-container *ngSwitchCase="'engineer'">
+          Scope attachment for smartphones to see the fundus for digital sharing, and on-device ML.
+        </ng-container>
       </div>
     </div>
 
@@ -53,8 +60,8 @@
     </div>
   </section>
 
-  <section class="about text-center m-v-lg" fxFlex fxLayout="row" fxLayout.lt-sm="column" fxLayoutGap="20px"
-           fxLayoutAlign="space-between">
+  <section class="about text-center m-v-lg" fxFlex fxLayout="row" fxLayout.lt-sm="column" fxLayoutAlign="space-between"
+           fxLayoutGap="20px">
     <div fxFlex>
       <img src="/assets/dial-multicloud.svg"/>
       <h2>Scholarship</h2>
@@ -77,7 +84,7 @@
   </section>
 </div>
 
-<section fxLayout="row" fxLayoutGap="25px" fxLayout.lt-md="column">
+<section fxLayout="row" fxLayout.lt-md="column" fxLayoutGap="25px">
   <div fxFlex>
     <img src="/assets/country.png" width="100%"/>
   </div>
@@ -107,7 +114,7 @@
 <section class="case_study p-v-lg">
   <div class="flex-container text-center flex-cols flex-center">
     <div class="m-v-md text-size-lg">Get involved</div>
-    <a href="mailto:samuel@offscale.io" class="btn btn-primary m-v-md">
+    <a class="btn btn-primary m-v-md" href="mailto:samuel@offscale.io">
       reach out
     </a>
   </div>
@@ -171,10 +178,10 @@
 </section>
 -->
 
-<footer fxLayout="row" fxLayoutAlign="center center" fxLayout.lt-md="column"
-        style="padding: 40px 0 40px 90px" ngStyle.lt-md="{'padding': 0 40px}"
-        class="text-center">
-  <a href="https://offscale.io/" fxFlex>
+<footer class="text-center" fxLayout="row" fxLayout.lt-md="column"
+        fxLayoutAlign="center center" ngStyle.lt-md="{'padding': 0 40px}"
+        style="padding: 40px 0 40px 90px">
+  <a fxFlex href="https://offscale.io/">
     <app-svg-viewer fxFlex src="/assets/logo-offscale.svg"></app-svg-viewer>
   </a>
   <div fxFlex>

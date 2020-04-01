@@ -1,7 +1,4 @@
-import { AfterContentInit, AfterViewInit, Component, ElementRef, ViewChild } from '@angular/core';
-
-import { SiteModeService } from '../site-mode.service';
-import { MatTooltip } from '@angular/material/tooltip';
+import { Component } from '@angular/core';
 
 
 @Component({
@@ -10,7 +7,6 @@ import { MatTooltip } from '@angular/material/tooltip';
   styleUrls: ['./navbar.component.scss']
 })
 export class NavbarComponent {
-  constructor(public siteModeService: SiteModeService) { }
 
   /*
   ngAfterViewInit() {
