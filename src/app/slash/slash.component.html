@@ -23,7 +23,7 @@
 
   <section [ngSwitch]="siteModeService.siteMode$ | async" class="m-v-lg text-size-lg" fxFlex>
     <ng-container *ngSwitchCase="'business'">
-      Open-source R&D of medical devices and software, with a view towards worldwide diagnostic screening.
+      Open-source R&amp;D of medical devices and software, with a view towards worldwide diagnostic screening.
     </ng-container>
     <ng-container *ngSwitchCase="'engineer'">
       Open-source cross-platform cloud-agnostic technology created for worldwide diagnostic screening.
@@ -33,7 +33,7 @@
   <section class="about text-center m-v-lg" fxFlex fxLayout="row" fxLayout.lt-sm="column" fxLayoutAlign="space-between"
            fxLayoutGap="20px">
     <div fxFlex>
-      <img src="/assets/dial-36x.svg"/>
+      <img src="/assets/dial-md.svg"/>
       <h2>Medical devices</h2>
       <div [ngSwitch]="siteModeService.siteMode$ | async">
         <ng-container *ngSwitchCase="'business'">
@@ -49,7 +49,7 @@
       <img src="/assets/dial-gear.svg"/>
       <h2>Software</h2>
       <div>
-        Artificial Intelligence to diagnose glaucoma (98.59% AUC) and diabetic retinopathy (TBA% AUC).
+        Artificial Intelligence to diagnose glaucoma (99.12% AUCPR) and diabetic retinopathy (97.77% AUCPR).
       </div>
     </div>
 
@@ -63,7 +63,7 @@
   <section class="about text-center m-v-lg" fxFlex fxLayout="row" fxLayout.lt-sm="column" fxLayoutAlign="space-between"
            fxLayoutGap="20px">
     <div fxFlex>
-      <img src="/assets/dial-multicloud.svg"/>
+      <img src="/assets/dial-scholarship.svg"/>
       <h2>Scholarship</h2>
       <div>Supporting doctoral research.</div>
     </div>
@@ -120,7 +120,6 @@
   </div>
 </section>
 
-<h3>Roadmap</h3>
 <div class="timeline">
   <div class="container left">
     <div class="content">

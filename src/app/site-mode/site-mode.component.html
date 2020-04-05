@@ -3,9 +3,9 @@
   <ng-container *ngSwitchCase="'business'">
     <div (click)="siteModeService.siteModeSubject$.next('engineer')" class="fakeTooltip"
          fxFlex fxHide.lt-sm>
-      Translate for business
+      Translate for engineers
     </div>
-    <button (click)="siteModeService.siteModeSubject$.next('engineer')" aria-label="Business translation"
+    <button (click)="siteModeService.siteModeSubject$.next('engineer')" aria-label="Software-engineer translation"
             fxFlex.gt-xs="16"
             mat-mini-fab>
       <mat-icon>business_center</mat-icon>
@@ -15,9 +15,9 @@
   <ng-container *ngSwitchCase="'engineer'">
     <div (click)="siteModeService.siteModeSubject$.next('business')" class="fakeTooltip"
          fxFlex fxHide.lt-sm>
-      Translate for engineers
+      Translate for business
     </div>
-    <button (click)="siteModeService.siteModeSubject$.next('business')" aria-label="Software-engineer translation"
+    <button (click)="siteModeService.siteModeSubject$.next('business')" aria-label="Business translation"
             fxFlex.gt-xs="16"
             mat-mini-fab>
 
