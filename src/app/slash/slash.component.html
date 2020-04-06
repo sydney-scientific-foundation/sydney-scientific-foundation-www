@@ -33,7 +33,7 @@
   <section class="about text-center m-v-lg" fxFlex fxLayout="row" fxLayout.lt-sm="column" fxLayoutAlign="space-between"
            fxLayoutGap="20px">
     <div fxFlex>
-      <img src="/assets/dial-md.svg"/>
+      <img class="dial" src="/assets/ophthalmoscope.svg"/>
       <h2>Medical devices</h2>
       <div [ngSwitch]="siteModeService.siteMode$ | async">
         <ng-container *ngSwitchCase="'business'">
@@ -46,7 +46,7 @@
     </div>
 
     <div fxFlex>
-      <img src="/assets/dial-gear.svg"/>
+      <img class="dial" src="/assets/software.svg"/>
       <h2>Software</h2>
       <div>
         Artificial Intelligence to diagnose glaucoma (99.12% AUCPR) and diabetic retinopathy (97.77% AUCPR).
@@ -54,7 +54,7 @@
     </div>
 
     <div fxFlex>
-      <img src="/assets/dial-heart.svg"/>
+      <img class="dial" src="/assets/heart.svg"/>
       <h2>100% open source</h2>
       <div>(Apache OR MIT) licensed. Totally free.</div>
     </div>
@@ -63,19 +63,19 @@
   <section class="about text-center m-v-lg" fxFlex fxLayout="row" fxLayout.lt-sm="column" fxLayoutAlign="space-between"
            fxLayoutGap="20px">
     <div fxFlex>
-      <img src="/assets/dial-scholarship.svg"/>
+      <img src="/assets/scholarship.svg"/>
       <h2>Scholarship</h2>
       <div>Supporting doctoral research.</div>
     </div>
 
     <div fxFlex>
-      <img src="/assets/dial-ml.svg"/>
+      <img src="/assets/globe.svg"/>
       <h2>Scalable</h2>
       <div>Medical device and software distribution setup to screen 100M people in the next 5 years.</div>
     </div>
 
     <div fxFlex>
-      <img src="/assets/dial-distributed.svg"/>
+      <img src="/assets/non-government.svg"/>
       <h2>Non-government</h2>
       <div>Self-funded through <a href="https://offscale.io" target="_blank">unrelated consulting work</a>.<br/>
         Completely non-profit. All devices, software, and IP are <strong>given away</strong> at our expense.
