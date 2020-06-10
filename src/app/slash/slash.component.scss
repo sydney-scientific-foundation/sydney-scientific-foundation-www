@@ -122,6 +122,7 @@ hr.vertical {
   // max-width: 1200px;
   margin: 0 auto;
   background-color: #220066;
+  width: 100%;
 }
 
 /* The actual timeline (the vertical ruler) */
@@ -245,4 +246,33 @@ hr.vertical {
 .dial {
   /*height: 300px;
   width: 300px;*/
+}
+
+footer {
+  h1, h3, a {
+    font-family: 'Nunito Sans', Arial, serif;
+    line-height: 1;
+    margin: 0;
+  }
+
+  a:visited {
+    color: white;
+  }
+
+  a:link {
+    color: white;
+    text-decoration: none;
+    font-weight: normal;
+    line-height: 80px;
+    font-size: 20px;
+  }
+
+  h1 {
+    font-size: xx-large;
+    font-weight: bolder;
+  }
+
+  h3 {
+    font-weight: normal;
+  }
 }

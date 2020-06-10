@@ -1,156 +1,192 @@
 <app-navbar>
   <div [ngSwitch]="siteModeService.siteMode$ | async"
-       class="text-size-xl text-center m-v-lg" style="padding-bottom: 0;">
+       class="text-size-xl text-center m-v-lg"
+       style="padding: 25px 0;">
     <ng-container *ngSwitchCase="'business'">
-      Independent charity.<br/>Scalable medical diagnostics.
+      Independent charity.<br/>
+      Scalable medical diagnostics.
     </ng-container>
     <ng-container *ngSwitchCase="'engineer'">
-      Compilers, distributed systems, Rust and C++.<br/>Scale medical projects and infrastructure.
+      Compilers, distributed systems, Rust and C++.<br/>
+      Scale medical projects and infrastructure.
     </ng-container>
   </div>
   <!--
-  <div class="text-center" fxLayout="row" fxLayoutAlign="center center" fxLayoutGap="20px"
+  <div class="text-center"
+       fxLayout="row"
+       fxLayoutAlign="center center"
+       fxLayoutGap="20px"
        style="padding-bottom: 200px;">
-    <a href="#" class="btn btn-primary" fxFlex>Download</a>
-    <a href="#" class="btn btn-secondary" fxFlex>Get Started</a>
+    <a href="#" class="btn btn-primary" fxFlex>
+        Download
+    </a>
+    <a href="#" class="btn btn-secondary" fxFlex>
+        Get Started
+    </a>
   </div>
   -->
 </app-navbar>
 
-<div fxLayout="column" ngStyle.gt-xs="margin: 0 15% 0 15%;" ngStyle.lt-md="margin: 0">
-  <!--<section class="hero-image" style="margin-top: -200px" [innerHtml]="safeHtml" *ngIf="safeHtml" fxFlex>
-  </section>-->
+<div fxLayout="column">
+  <div fxLayout="column" fxFlex="auto"
+       [ngStyle.gt-xs]="{'margin': '0 15% 0 15%'}"
+       [ngStyle.lt-md]="{'margin': '0'}">
+    <!--
+    <section class="hero-image"
+             style="margin-top: -200px"
+             [innerHtml]="safeHtml"
+             *ngIf="safeHtml" fxFlex>
+    </section>
+    -->
 
-  <section [ngSwitch]="siteModeService.siteMode$ | async" class="m-v-lg text-size-lg" fxFlex>
-    <ng-container *ngSwitchCase="'business'">
-      Open-source R&amp;D of medical devices and software, with a view towards worldwide diagnostic screening.
-    </ng-container>
-    <ng-container *ngSwitchCase="'engineer'">
-      Open-source cross-platform cloud-agnostic technology created for worldwide diagnostic screening.
-    </ng-container>
+    <section [ngSwitch]="siteModeService.siteMode$ | async"
+             class="m-v-lg text-size-lg" fxFlex="auto">
+      <ng-container *ngSwitchCase="'business'">
+        Open-source R&amp;D of medical devices and software, with a view towards worldwide diagnostic screening.
+      </ng-container>
+      <ng-container *ngSwitchCase="'engineer'">
+        Open-source cross-platform cloud-agnostic technology created for worldwide diagnostic screening.
+      </ng-container>
+    </section>
+
+    <section class="about text-center m-v-lg" fxFlex="auto"
+             fxLayout="row" fxLayout.lt-sm="column"
+             fxLayoutAlign="space-between"
+             fxLayoutGap="20px">
+      <div fxFlex="auto">
+        <img class="dial" src="/assets/ophthalmoscope.svg"
+             alt="ophthalmoscope"/>
+        <h2>Medical devices</h2>
+        <div [ngSwitch]="siteModeService.siteMode$ | async">
+          <ng-container *ngSwitchCase="'business'">
+            Smartphone ophthalmoscopes developed alongside ophthalmologists (surgeons) in Sydney, Australia.
+          </ng-container>
+          <ng-container *ngSwitchCase="'engineer'">
+            Scope attachment for smartphones to see the fundus for digital sharing, and on-device ML.
+          </ng-container>
+        </div>
+      </div>
+
+      <div fxFlex="auto">
+        <img class="dial" src="/assets/software.svg"
+             alt="software"/>
+        <h2>Software</h2>
+        <div>
+          Artificial Intelligence to diagnose glaucoma (99.12% AUCPR) and diabetic retinopathy (97.77% AUCPR).
+        </div>
+      </div>
+
+      <div fxFlex="auto">
+        <img class="dial" src="/assets/heart.svg"
+             alt="Open-source"/>
+        <h2>100% open source</h2>
+        <div>(Apache OR MIT) licensed. Totally free.</div>
+      </div>
+    </section>
+
+    <section class="about text-center m-v-lg"
+             fxFlex="auto"
+             fxLayout="row" fxLayout.lt-sm="column"
+             fxLayoutAlign="space-between"
+             fxLayoutGap="20px">
+      <div fxFlex>
+        <img src="/assets/scholarship.svg" alt="scholarship"/>
+        <h2>Scholarship</h2>
+        <div>Supporting doctoral research.</div>
+      </div>
+
+      <div fxFlex>
+        <img src="/assets/globe.svg" alt="scalable"/>
+        <h2>Scalable</h2>
+        <div>Medical device and software distribution setup to screen 100M people in the next 5 years.</div>
+      </div>
+
+      <div fxFlex>
+        <img src="/assets/non-government.svg"
+             alt="non-government"/>
+        <h2>Non-government</h2>
+        <div>Self-funded through <a href="https://offscale.io" target="_blank">unrelated consulting work</a>.<br/>
+          Completely non-profit. All devices, software, and IP are <strong>given away</strong> at our expense.
+        </div>
+      </div>
+    </section>
+  </div>
+
+
+  <section fxLayout="row"
+           fxLayout.lt-md="column"
+           fxLayoutGap="25px"
+           fxFlex="auto"
+           style="padding-bottom: 5px">
+    <img src="/assets/country.png" fxFlex="auto"
+         [ngStyle.gt-sm]="{'width': '50%', 'height': '50%'}"
+         alt="country"/>
+
+    <div fxFlex>
+      <div class="text-bold text-size-md">$1,068,815.62 for the first 2.3962 billion people</div>
+      <p>
+        The medical device we invented brings the smartphone ophthalmoscope down from the $3000&ndash;$500 range to less
+        than 1&cent;.
+      </p>
+      <p>
+        Meaning we can now screen a good 31.7% of the world for a million dollars &amp; change.
+      </p>
+
+      <div class="text-bold text-size-md">Non-government</div>
+      <p>
+        Our budgets are not party to changing political environments.
+      </p>
+
+      <div class="text-bold text-size-md">Research and medical doctor approved</div>
+      <p>
+        Researched with some of the world-leading ophthalmologists, with the University of Sydney (ranked #5 in the
+        world for ophthalmology).
+      </p>
+    </div>
   </section>
 
-  <section class="about text-center m-v-lg" fxFlex fxLayout="row" fxLayout.lt-sm="column" fxLayoutAlign="space-between"
-           fxLayoutGap="20px">
-    <div fxFlex>
-      <img class="dial" src="/assets/ophthalmoscope.svg"/>
-      <h2>Medical devices</h2>
-      <div [ngSwitch]="siteModeService.siteMode$ | async">
-        <ng-container *ngSwitchCase="'business'">
-          Smartphone ophthalmoscopes developed alongside ophthalmologists (surgeons) in Sydney, Australia.
-        </ng-container>
-        <ng-container *ngSwitchCase="'engineer'">
-          Scope attachment for smartphones to see the fundus for digital sharing, and on-device ML.
-        </ng-container>
-      </div>
-    </div>
-
-    <div fxFlex>
-      <img class="dial" src="/assets/software.svg"/>
-      <h2>Software</h2>
-      <div>
-        Artificial Intelligence to diagnose glaucoma (99.12% AUCPR) and diabetic retinopathy (97.77% AUCPR).
-      </div>
-    </div>
-
-    <div fxFlex>
-      <img class="dial" src="/assets/heart.svg"/>
-      <h2>100% open source</h2>
-      <div>(Apache OR MIT) licensed. Totally free.</div>
+  <section class="case_study p-v-lg" fxFlex="auto">
+    <div class="flex-container text-center flex-cols flex-center">
+      <div class="m-v-md text-size-lg">Get involved</div>
+      <a class="btn btn-primary m-v-md"
+         href="mailto:samuel@offscale.io">
+        reach out
+      </a>
     </div>
   </section>
 
-  <section class="about text-center m-v-lg" fxFlex fxLayout="row" fxLayout.lt-sm="column" fxLayoutAlign="space-between"
-           fxLayoutGap="20px">
-    <div fxFlex>
-      <img src="/assets/scholarship.svg"/>
-      <h2>Scholarship</h2>
-      <div>Supporting doctoral research.</div>
-    </div>
-
-    <div fxFlex>
-      <img src="/assets/globe.svg"/>
-      <h2>Scalable</h2>
-      <div>Medical device and software distribution setup to screen 100M people in the next 5 years.</div>
-    </div>
-
-    <div fxFlex>
-      <img src="/assets/non-government.svg"/>
-      <h2>Non-government</h2>
-      <div>Self-funded through <a href="https://offscale.io" target="_blank">unrelated consulting work</a>.<br/>
-        Completely non-profit. All devices, software, and IP are <strong>given away</strong> at our expense.
+  <div class="timeline" fxFlex="auto">
+    <div class="container left">
+      <div class="content">
+        <h2>Engineer faster and with better quality</h2>
+        <p>Compilers keep languages&mdash;across frontends and backends&mdash;in sync.</p>
+        <p>Maintaining a test coverage of 100% becomes feasible.</p>
+        <!--<p>Develop compilers for Swift, Java, Kotlin, TypeScript, and Rust</p>-->
       </div>
     </div>
-  </section>
-</div>
-
-<section fxLayout="row" fxLayout.lt-md="column" fxLayoutGap="25px">
-  <div fxFlex>
-    <img src="/assets/country.png" width="100%"/>
-  </div>
-  <div fxFlex>
-    <div class="text-bold text-size-md">$1,068,815.62 for the first 2.3962 billion people</div>
-    <p>
-      The medical device we invented brings the smartphone ophthalmoscope down from the $3000&ndash;$500 range to less
-      than 1&cent;.
-    </p>
-    <p>
-      Meaning we can now screen a good 31.7% of the world for a million dollars &amp; change.
-    </p>
-
-    <div class="text-bold text-size-md">Non-government</div>
-    <p>
-      Our budgets are not party to changing political environments.
-    </p>
-
-    <div class="text-bold text-size-md">Research and medical doctor approved</div>
-    <p>
-      Researched with some of the world-leading ophthalmologists, with the University of Sydney (ranked #5 in the
-      world for ophthalmology).
-    </p>
-  </div>
-</section>
-
-<section class="case_study p-v-lg">
-  <div class="flex-container text-center flex-cols flex-center">
-    <div class="m-v-md text-size-lg">Get involved</div>
-    <a class="btn btn-primary m-v-md" href="mailto:samuel@offscale.io">
-      reach out
-    </a>
-  </div>
-</section>
-
-<div class="timeline">
-  <div class="container left">
-    <div class="content">
-      <h2>Engineer faster and with better quality</h2>
-      <p>Compilers keep languages&mdash;across frontends and backends&mdash;in sync.</p>
-      <p>Maintaining a test coverage of 100% becomes feasible.</p>
-      <!--<p>Develop compilers for Swift, Java, Kotlin, TypeScript, and Rust</p>-->
+    <div class="container right">
+      <div class="content">
+        <h2>Scale infrastructure</h2>
+        <p>From 1 server to 10,000</p>
+      </div>
     </div>
-  </div>
-  <div class="container right">
-    <div class="content">
-      <h2>Scale infrastructure</h2>
-      <p>From 1 server to 10,000</p>
+    <div class="container left">
+      <div class="content">
+        <h2>Deployment solutions</h2>
+        <p>Consistent tool for Docker, Windows, Linux, macOS, FreeBSD</p>
+      </div>
     </div>
-  </div>
-  <div class="container left">
-    <div class="content">
-      <h2>Deployment solutions</h2>
-      <p>Consistent tool for Docker, Windows, Linux, macOS, FreeBSD</p>
+    <div class="container right">
+      <div class="content">
+        <h2>Machine-learning pipelines</h2>
+        <p>TensorFlow, PyTorch; on CPUs, GPUs, and TPUs</p>
+      </div>
     </div>
-  </div>
-  <div class="container right">
-    <div class="content">
-      <h2>Machine-learning pipelines</h2>
-      <p>TensorFlow, PyTorch; on CPUs, GPUs, and TPUs</p>
-    </div>
-  </div>
-  <div class="container left">
-    <div class="content">
-      <h2>Research &amp; Development</h2>
-      <!--<p>Foundation's founder's PhD focuses on facilitating large-scale screening programmes.</p>-->
+    <div class="container left">
+      <div class="content">
+        <h2>Research &amp; Development</h2>
+        <!--<p>Foundation's founder's PhD focuses on facilitating large-scale screening programmes.</p>-->
+      </div>
     </div>
   </div>
 </div>
@@ -177,11 +213,14 @@
 </section>
 -->
 
-<footer class="text-center" fxLayout="row" fxLayout.lt-md="column"
-        fxLayoutAlign="center center" ngStyle.lt-md="{'padding': 0 40px}"
-        style="padding: 40px 0 40px 90px">
+<footer class="text-center" fxLayout="row"
+        fxLayout.lt-md="column"
+        fxLayoutAlign="center center"
+        [ngStyle.lt-md]="{'padding': '0 40px'}"
+        [ngStyle.gt-sm]="{'padding': '40px 0 40px 90px'}">
   <a fxFlex href="https://offscale.io/">
-    <app-svg-viewer fxFlex src="/assets/logo-offscale.svg"></app-svg-viewer>
+    <h1>Sydney Scientific Foundation</h1>
+    <h3>The scalable medical diagnosis charity</h3>
   </a>
   <div fxFlex>
     &copy; 2018&ndash;2020 <a href="https://offscale.io">offscale</a>

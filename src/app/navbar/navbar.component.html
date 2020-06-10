@@ -1,6 +1,9 @@
-<section class="hero" fxLayout="column">
-  <nav fxFlex fxLayout="row" ngStyle.gt-sm="padding-top: 20px" ngStyle.lt-md="padding-top: 0">
-    <a fxFlex.gt-md="50" routerLink="/">
+<section class="hero" fxLayout="column"
+         style="padding-top: 5px">
+  <nav fxFlex fxLayout="row"
+       [ngStyle.gt-sm]="{'padding': '0 100px'}"
+       [ngStyle.lt-md]="{'padding': '20px'}">
+    <a fxFlex.gt-md="auto" routerLink="/">
       <h1>Sydney Scientific Foundation</h1>
       <h3>The scalable medical diagnosis charity</h3>
       <!--<img alt="Offscale"
@@ -8,11 +11,13 @@
            src="/assets/logo-offscale.svg"
            style="width: 100%"/>-->
     </a>
-    <h1 fxFlex fxLayoutAlign="end" ngStyle.lt-md="font-size: small">
+    <h1 fxFlex fxLayoutAlign="end"
+        ngStyle.lt-md="font-size: small">
       <a href="https://github.com/offscale">
         <img alt="GitHub repos for Compiler Driven Development"
              height="50px"
-             ngStyle.lt-md="height: 30px; padding: 0 10px" src="/assets/github-white.svg"/>
+             ngStyle.lt-md="height: 30px; padding: 0 10px"
+             src="/assets/github-white.svg"/>
       </a>
     </h1>
   </nav>
