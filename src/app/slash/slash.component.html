@@ -1,7 +1,7 @@
 <app-navbar>
   <div [ngSwitch]="siteModeService.siteMode$ | async"
        class="text-size-xl text-center m-v-lg"
-       style="padding: 50px 0;">
+       style="padding: 55px 0;">
     <ng-container *ngSwitchCase="'business'">
       Independent charity.<br/>
       Scalable medical diagnostics.
@@ -118,11 +118,13 @@
            fxLayoutGap="25px"
            fxFlex="auto"
            style="padding-bottom: 5px">
-    <img src="/assets/country.png" fxFlex="auto"
-         [ngStyle.gt-sm]="{'width': '50%', 'height': '50%'}"
-         alt="country"/>
+    <div style="width: 100%" fxFlex="auto">
+      <img src="/assets/country.png"
+           style="display: block; height: auto; width: 100%"
+           alt="country"/>
+    </div>
 
-    <div fxFlex>
+    <div fxFlex="auto">
       <div class="text-bold text-size-md">$1,068,815.62 for the first 2.3962 billion people</div>
       <p>
         The medical device we invented brings the smartphone ophthalmoscope down from the $3000&ndash;$500 range to less
