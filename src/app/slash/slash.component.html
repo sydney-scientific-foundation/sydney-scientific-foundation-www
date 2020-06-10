@@ -1,7 +1,7 @@
 <app-navbar>
   <div [ngSwitch]="siteModeService.siteMode$ | async"
        class="text-size-xl text-center m-v-lg"
-       style="padding: 25px 0;">
+       style="padding: 50px 0;">
     <ng-container *ngSwitchCase="'business'">
       Independent charity.<br/>
       Scalable medical diagnostics.
