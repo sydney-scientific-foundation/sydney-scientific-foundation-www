@@ -27,6 +27,61 @@
   -->
 </app-navbar>
 
+<div fxLayout="row" fxLayout.lt-md="column" style="background-color: #220066">
+  <mat-card class="example-card" style="margin: 20px">
+    <mat-card-header>
+      <div mat-card-avatar class="example-header-image"></div>
+      <mat-card-title>Glaucoma Australia &amp; OPSM joint public awareness event</mat-card-title>
+      <mat-card-subtitle>
+        With software development, epidemiological investigation, and R&amp;D sponsored by Sydney Scientific Foundation
+      </mat-card-subtitle>
+    </mat-card-header>
+    <img mat-card-image src="/assets/opsm.jpg" alt="Photo of a Shiba Inu">
+    <mat-card-content>
+      Our Glaucoma Risk Calculator was built for Glaucoma Australia. With the exception of the first two weeks work, all
+      development and maintenance has been sponsored at our expense.
+    </mat-card-content>
+    <mat-card-actions>
+      <a mat-button
+         href="https://www.linkedin.com/posts/samuelmarks_promoting-glaucoma-awareness-in-martin-placewith-activity-6510680901809213440-nTZD">More
+        photos on LinkedIn</a>
+      <button mat-button (click)="coming_soon()">Research paper</button>
+    </mat-card-actions>
+  </mat-card>
+
+  <div fxLayout="column">
+    <mat-card class="example-card" style="margin: 20px" fxFlex="auto">
+      <mat-card-header>
+        <div mat-card-avatar class="example-header-image"></div>
+        <mat-card-title>RANZCO presentation</mat-card-title>
+        <mat-card-subtitle>Royal Australian New Zealand College of Ophthalmologists</mat-card-subtitle>
+      </mat-card-header>
+      <img mat-card-image src="/assets/Samuel-Marks-RANZCO-2019.png" alt="Photo of a Shiba Inu">
+      <mat-card-content>
+        <p>
+          Presented at <strong>the ophthalmology conference</strong> on the latest AI accuracy received on the Blue
+          Mountains Eye Study (BMES) dataset.
+        </p>
+      </mat-card-content>
+    </mat-card>
+
+    <mat-card class="example-card" style="margin: 20px" fxFlex="auto">
+      <mat-card-header>
+        <div mat-card-avatar class="example-header-image"></div>
+        <mat-card-title>Impending agreement with major Australian university</mat-card-title>
+        <mat-card-subtitle>Physics (optics) department</mat-card-subtitle>
+      </mat-card-header>
+
+      <mat-card-content>
+        <p>
+          Working closely with physicists to create new medical devices, intended for charitable distribution, and
+          released patent-free and open-source.
+        </p>
+      </mat-card-content>
+    </mat-card>
+  </div>
+</div>
+
 <div fxLayout="column">
   <div fxLayout="column" fxFlex="auto"
        [ngStyle.gt-xs]="{'margin': '0 15% 0 15%'}"
