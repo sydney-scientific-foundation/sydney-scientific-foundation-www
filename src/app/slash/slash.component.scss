@@ -277,8 +277,18 @@ footer {
   }
 }
 
-
 .example-header-image {
   background-image: url('https://material.angular.io/assets/img/examples/shiba1.jpg');
+  background-size: cover;
+}
+
+
+.ga-header-image {
+  background-image: url('/assets/ga-logo.png');
+  background-size: cover;
+}
+
+.ranzco-header-image {
+  background-image: url('/assets/ranzco.png');
   background-size: cover;
 }
