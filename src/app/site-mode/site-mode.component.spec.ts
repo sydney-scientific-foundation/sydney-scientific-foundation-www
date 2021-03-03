@@ -1,4 +1,4 @@
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
 
 import { SiteModeComponent } from './site-mode.component';
 
@@ -6,7 +6,7 @@ describe('SiteModeComponent', () => {
   let component: SiteModeComponent;
   let fixture: ComponentFixture<SiteModeComponent>;
 
-  beforeEach(async(() => {
+  beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
       declarations: [SiteModeComponent]
     })
