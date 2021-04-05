@@ -30,4 +30,8 @@ export class SlashComponent implements OnInit {
         duration: 2500,
       });
   }
+
+  open(url: string) {
+    window.open(url, '_blank').focus();
+  }
 }
