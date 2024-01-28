@@ -1,15 +1,17 @@
 <app-navbar>
-  <div [ngSwitch]="siteModeService.siteMode$ | async"
-       class="text-size-xl text-center m-v-lg"
-       style="padding: 55px 0;">
-    <ng-container *ngSwitchCase="'business'">
-      Independent charity.<br/>
-      Scalable medical diagnostics.
-    </ng-container>
-    <ng-container *ngSwitchCase="'engineer'">
-      Compilers, distributed systems, Rust and C++.<br/>
-      Scale medical projects and infrastructure.
-    </ng-container>
+  <div
+    class="text-size-xl text-center m-v-lg"
+    style="padding: 55px 0;">
+    @switch (siteModeService.siteMode$ | async) {
+      @case ('business') {
+        Independent charity.<br/>
+        Scalable medical diagnostics.
+      }
+      @case ('engineer') {
+        Compilers, distributed systems, Rust and C++.<br/>
+        Scale medical projects and infrastructure.
+      }
+    }
   </div>
   <!--
   <div class="text-center"
@@ -28,7 +30,7 @@
 </app-navbar>
 
 <div fxLayout="row" fxLayout.lt-md="column" style="background-color: #220066">
-  <mat-card class="example-card" style="margin: 20px">
+  <mat-card class="example-card" fxFlex="64.8" style="margin: 20px">
     <mat-card-header>
       <div mat-card-avatar class="ga-header-image"></div>
       <mat-card-title>Glaucoma Australia &amp; OPSM joint public awareness event</mat-card-title>
@@ -49,8 +51,8 @@
     </mat-card-actions>
   </mat-card>
 
-  <div fxLayout="column">
-    <mat-card class="example-card" style="margin: 20px" fxFlex="auto">
+  <div fxLayout="column" fxFlex="33">
+    <mat-card class="example-card" fxFlex="auto" style="margin: 20px">
       <mat-card-header>
         <div mat-card-avatar>
           <!--<svg width="70" height="31" viewBox="0 0 70 31" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"></svg>-->
@@ -63,18 +65,21 @@
 
       <mat-card-content>
         <p>
-          Memorandum of Understanding signed with 2020 Australian of the Year's charity; to collaborate on running screening programmes.
+          Memorandum of Understanding signed with 2020 Australian of the Year's charity; to collaborate on running
+          screening programmes.
         </p>
       </mat-card-content>
     </mat-card>
 
-    <mat-card class="example-card cursor-pointer" style="margin: 20px" fxFlex="auto" (click)="open('https://ranzcoabstracts.com/abstract/automating-glaucoma-diagnosis-through-convolutional-neural-networks-ai/')">
+    <mat-card class="example-card cursor-pointer" style="margin: 20px" fxFlex="auto"
+              (click)="open('https://ranzcoabstracts.com/abstract/automating-glaucoma-diagnosis-through-convolutional-neural-networks-ai/')">
       <mat-card-header>
         <div mat-card-avatar class="ranzco-header-image"></div>
         <mat-card-title>RANZCO presentation</mat-card-title>
         <mat-card-subtitle>Royal Australian New Zealand College of Ophthalmologists</mat-card-subtitle>
       </mat-card-header>
-      <img mat-card-image src="/assets/Samuel-Marks-RANZCO-2019.png" alt="Photo of the first slide from the RANZCO talk">
+      <img mat-card-image src="/assets/Samuel-Marks-RANZCO-2019.png"
+           alt="Photo of the first slide from the RANZCO talk">
       <mat-card-content>
         <p>
           Presented at <strong>the ophthalmology conference</strong> on the latest AI accuracy received on the Blue
@@ -95,21 +100,24 @@
        [ngStyle.gt-xs]="{'margin': '0 15% 0 15%'}"
        [ngStyle.lt-md]="{'margin': '0'}">
     <!--
-    <section class="hero-image"
-             style="margin-top: -200px"
-             [innerHtml]="safeHtml"
-             *ngIf="safeHtml" fxFlex>
-    </section>
+    @if (safeHtml) {
+      <section class="hero-image"
+               style="margin-top: -200px"
+               [innerHtml]="safeHtml"
+               fxFlex>
+      </section>
+    }
     -->
 
-    <section [ngSwitch]="siteModeService.siteMode$ | async"
-             class="m-v-lg text-size-lg" fxFlex="auto">
-      <ng-container *ngSwitchCase="'business'">
-        Open-source R&amp;D of medical devices and software, with a view towards worldwide diagnostic screening.
-      </ng-container>
-      <ng-container *ngSwitchCase="'engineer'">
-        Open-source cross-platform cloud-agnostic technology created for worldwide diagnostic screening.
-      </ng-container>
+    <section class="m-v-lg text-size-lg" fxFlex="auto">
+      @switch (siteModeService.siteMode$ | async) {
+        @case ('business') {
+          Open-source R&amp;D of medical devices and software, with a view towards worldwide diagnostic screening.
+        }
+        @case ('engineer') {
+          Open-source cross-platform cloud-agnostic technology created for worldwide diagnostic screening.
+        }
+      }
     </section>
 
     <section class="about text-center m-v-lg" fxFlex="auto"
@@ -120,13 +128,15 @@
         <img class="dial" src="/assets/ophthalmoscope.svg"
              alt="ophthalmoscope"/>
         <h2>Medical devices</h2>
-        <div [ngSwitch]="siteModeService.siteMode$ | async">
-          <ng-container *ngSwitchCase="'business'">
-            Smartphone ophthalmoscopes developed alongside ophthalmologists (surgeons) in Sydney, Australia.
-          </ng-container>
-          <ng-container *ngSwitchCase="'engineer'">
-            Scope attachment for smartphones to see the fundus for digital sharing, and on-device ML.
-          </ng-container>
+        <div>
+          @switch (siteModeService.siteMode$ | async) {
+            @case ('business') {
+              Smartphone ophthalmoscopes developed alongside ophthalmologists (surgeons) in Sydney, Australia.
+            }
+            @case ('engineer') {
+              Scope attachment for smartphones to see the fundus for digital sharing, and on-device ML.
+            }
+          }
         </div>
       </div>
 
@@ -250,9 +260,11 @@
     <div class="container left">
       <div class="content">
         <h2>Research &amp; Development</h2>
-        <p>Mass screening required constant innovation, lest the cost becomes unreasonable and diagnoses (comparatively) inaccurately.
+        <p>Mass screening required constant innovation, lest the cost becomes unreasonable and diagnoses (comparatively)
+          inaccurately.
           Therefore constant R&amp;D is required. Our founder's PhD (Medicine) was accepted in March 2021,
-          affirming our commitment to stringent research practices. We are almost ready to offer scholarships/grants.</p>
+          affirming our commitment to stringent research practices. We are almost ready to offer
+          scholarships/grants.</p>
       </div>
     </div>
   </div>
@@ -290,6 +302,6 @@
     <h3>The scalable medical diagnosis charity</h3>
   </a>
   <div fxFlex>
-    &copy; 2018&ndash;2023 <a href="https://offscale.io">offscale</a>
+    &copy; 2018&ndash;2024 <a href="https://offscale.io">offscale</a>
   </div>
 </footer>

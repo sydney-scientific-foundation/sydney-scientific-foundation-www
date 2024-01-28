@@ -1,9 +1,10 @@
-import {Component, OnInit} from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { DomSanitizer, SafeHtml } from '@angular/platform-browser';
 
+import { MatSnackBar } from '@angular/material/snack-bar';
+
 import { SiteModeService } from '../site-mode.service';
-import { MatLegacySnackBar as MatSnackBar } from '@angular/material/legacy-snack-bar';
-import {WindowRef} from "./window.service";
+import { WindowRef } from "./window.service";
 
 
 @Component({

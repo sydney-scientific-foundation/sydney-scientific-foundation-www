@@ -2,9 +2,11 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
 
-import { MatLegacyCardModule as MatCardModule } from '@angular/material/legacy-card';
-import { MatLegacyButtonModule as MatButtonModule } from '@angular/material/legacy-button';
-import { MatLegacySnackBarModule as MatSnackBarModule } from '@angular/material/legacy-snack-bar';
+import { MatCardModule } from '@angular/material/card';
+import { MatButtonModule } from '@angular/material/button';
+import { MatSnackBarModule } from '@angular/material/snack-bar';
+
+import { FlexLayoutModule } from 'ngx-flexible-layout';
 
 import { SvgViewerModule } from '../svg-viewer/svg-viewer.module';
 import { NavbarModule } from '../navbar/navbar.module';
@@ -16,8 +18,11 @@ import { WindowRef } from "./window.service";
   declarations: [SlashComponent],
   imports: [
     CommonModule, RouterModule, RouterModule.forChild(slashRoutes),
-    SvgViewerModule, NavbarModule, MatCardModule, MatButtonModule, MatSnackBarModule
+    MatCardModule, MatButtonModule, MatSnackBarModule,
+    FlexLayoutModule,
+    SvgViewerModule, NavbarModule
   ],
   providers: [WindowRef]
 })
-export class SlashModule {}
+export class SlashModule {
+}

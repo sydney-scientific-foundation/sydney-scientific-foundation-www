@@ -46,7 +46,7 @@
                 },
                 {
                   "type": "anyComponentStyle",
-                  "maximumWarning": "2kb",
+                  "maximumWarning": "3kb",
                   "maximumError": "4kb"
                 }
               ],
@@ -73,10 +73,10 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "browserTarget": "sydney-scientific-foundation-www:build:production"
+              "buildTarget": "sydney-scientific-foundation-www:build:production"
             },
             "development": {
-              "browserTarget": "sydney-scientific-foundation-www:build:development"
+              "buildTarget": "sydney-scientific-foundation-www:build:development"
             }
           },
           "defaultConfiguration": "development"
@@ -84,7 +84,7 @@
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "sydney-scientific-foundation-www:build"
+            "buildTarget": "sydney-scientific-foundation-www:build"
           }
         },
         "test": {

@@ -1,9 +1,10 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
+import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
 
-import { MatLegacyButtonModule as MatButtonModule } from '@angular/material/legacy-button';
+import { FlexLayoutModule } from 'ngx-flexible-layout';
 
 import { SiteModeComponent } from './site-mode.component';
 
@@ -12,8 +13,9 @@ import { SiteModeComponent } from './site-mode.component';
   declarations: [SiteModeComponent],
   imports: [
     CommonModule,
+    MatButtonModule,
     MatIconModule,
-    MatButtonModule
+    FlexLayoutModule
   ],
   exports: [SiteModeComponent]
 })
