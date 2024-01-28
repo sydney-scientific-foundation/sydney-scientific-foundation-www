@@ -33,6 +33,7 @@ jobs:
           git config --global user.name "$author"
           email="${email_author#*<}"; email="${email::-1}"
           git config --global user.email "$email"
+          cname='sydneyscientific.org'
           ng build --configuration production --base-href 'https://'"$cname"
           head -n4 README.md > 'dist/sydney-scientific-foundation-www/README.md'
-          npx angular-cli-ghpages --dir='dist/sydney-scientific-foundation-www' --repo='https://'"$GITHUB_TOKEN"'@github.com/sydney-scientific-foundation/sydney-scientific-foundation.github.io' --branch='master' --message="$MSG" --name="$name" --email="$email" --no-silent
+          npx angular-cli-ghpages --dir='dist/sydney-scientific-foundation-www' --cname="$cname" --repo='https://'"$GITHUB_TOKEN"'@github.com/sydney-scientific-foundation/sydney-scientific-foundation.github.io' --branch='master' --message="$MSG" --name="$name" --email="$email" --no-silent
