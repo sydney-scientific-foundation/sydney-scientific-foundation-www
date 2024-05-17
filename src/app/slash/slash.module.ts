@@ -1,5 +1,5 @@
 import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
+import { CommonModule, NgOptimizedImage } from '@angular/common';
 import { RouterModule } from '@angular/router';
 
 import { MatCardModule } from '@angular/material/card';
@@ -16,12 +16,12 @@ import { WindowRef } from "./window.service";
 
 @NgModule({
   declarations: [SlashComponent],
-  imports: [
-    CommonModule, RouterModule, RouterModule.forChild(slashRoutes),
-    MatCardModule, MatButtonModule, MatSnackBarModule,
-    FlexLayoutModule,
-    SvgViewerModule, NavbarModule
-  ],
+    imports: [
+        CommonModule, RouterModule, RouterModule.forChild(slashRoutes),
+        MatCardModule, MatButtonModule, MatSnackBarModule,
+        FlexLayoutModule,
+        SvgViewerModule, NavbarModule, NgOptimizedImage
+    ],
   providers: [WindowRef]
 })
 export class SlashModule {
