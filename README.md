@@ -8,7 +8,7 @@ Sydney Scientific Foundation website.
 ## Deploy distribution
 First [`npm i -g angular-cli-ghpages`](https://github.com/angular-schule/angular-cli-ghpages), then:
 
-    ng build --prod
+    ng build --configuration production
     cp README.md dist/sydney-scientific-foundation-www
     # --cname='scientific.sydney'
     ngh --dir='dist/sydney-scientific-foundation-www' --repo='https://github.com/sydney-scientific-foundation/sydney-scientific-foundation.github.io' --branch='master' --message="$(git log -1 --pretty='%B')"
